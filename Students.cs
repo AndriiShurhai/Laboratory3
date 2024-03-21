@@ -9,14 +9,14 @@ namespace People
             Execute_Block1.Do();
         }
     }
-    public class Andrew2
+    public class Nazar
     {
         public static void first()
         {
             Execute_Block1.Do();
         }
     }
-    public class Andrew3
+    public class Karina
     {
         public static void first()
         {
