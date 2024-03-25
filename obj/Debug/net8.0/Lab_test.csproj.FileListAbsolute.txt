@@ -26,3 +26,4 @@ D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Labo
 D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\bin\Debug\net8.0\Lab_test.pdb
 D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net8.0\Lab_test.genruntimeconfig.cache
 D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net8.0\ref\Lab_test.dll
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net8.0\Lab_test.sourcelink.json

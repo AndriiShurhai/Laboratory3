@@ -1,31 +1,21 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
+using OutPutArrays;
 
 
 namespace Block1
 {
     public class Execute_Block1
     {
-        public static void Do()
+        public static int[] Do(int[] inputArray)
         {
-            int[] inputArray = GetInputArray();
             int key = GetUsersKey();
 
-            EliminateKey(inputArray, key);
-        }
+            int[] resultArray = CreateArrayWithoutKey(inputArray, key);
 
-        static int[] GetInputArray()
-        {
-            Console.Write("Enter an array: ");
-            string[] data = Console.ReadLine().Trim().Split();
-            int[] array = new int[data.Length];
+            OutPut.OutputArray(resultArray);
 
-            for (int i = 0; i < data.Length; i++)
-            {
-                array[i] = int.Parse(data[i]);
-            }
-
-            return array;
+            return resultArray;
         }
 
         static int GetUsersKey()
@@ -41,16 +31,7 @@ namespace Block1
             return key;
         }
 
-        static void DisplayArray(int[] array)
-        {
-            Console.Write("Array: ");
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write($"{array[i]} ");
-            }
-        }
-
-        static void EliminateKey(int[] array, int key)
+        static int[] CreateArrayWithoutKey(int[] array, int key)
         {
             int keyIndex = -1;
             int size = array.Length;
@@ -68,7 +49,7 @@ namespace Block1
             if (keyIndex == -1)
             {
                 Console.WriteLine("No such key in array");
-                return;
+                return array;
             }
 
             for (int i = keyIndex; i > 0; i--)
@@ -80,7 +61,8 @@ namespace Block1
             {
                 resultArray[i - 1] = array[i];
             }
-            DisplayArray(resultArray);
+
+            return resultArray;
         }
     }
 }
