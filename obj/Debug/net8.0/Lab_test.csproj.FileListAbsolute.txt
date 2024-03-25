@@ -27,3 +27,18 @@ D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Labo
 D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net8.0\Lab_test.genruntimeconfig.cache
 D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net8.0\ref\Lab_test.dll
 D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net8.0\Lab_test.sourcelink.json
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\bin\Debug\net8.0\Lab_test.exe
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\bin\Debug\net8.0\Lab_test.deps.json
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\bin\Debug\net8.0\Lab_test.runtimeconfig.json
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\bin\Debug\net8.0\Lab_test.dll
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\bin\Debug\net8.0\Lab_test.pdb
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\obj\Debug\net8.0\Lab_test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\obj\Debug\net8.0\Lab_test.AssemblyInfoInputs.cache
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\obj\Debug\net8.0\Lab_test.AssemblyInfo.cs
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\obj\Debug\net8.0\Lab_test.csproj.CoreCompileInputs.cache
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\obj\Debug\net8.0\Lab_test.sourcelink.json
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\obj\Debug\net8.0\Lab_test.dll
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\obj\Debug\net8.0\refint\Lab_test.dll
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\obj\Debug\net8.0\Lab_test.pdb
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\obj\Debug\net8.0\Lab_test.genruntimeconfig.cache
+C:\Users\acer\source\repos\mycodes\.vs\laba3 3sem\Laboratory3\obj\Debug\net8.0\ref\Lab_test.dll
