@@ -1,0 +1,15 @@
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\bin\Debug\net7.0\Lab_test.exe
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\bin\Debug\net7.0\Lab_test.deps.json
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\bin\Debug\net7.0\Lab_test.runtimeconfig.json
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\bin\Debug\net7.0\Lab_test.dll
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\bin\Debug\net7.0\Lab_test.pdb
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net7.0\Lab_test.GeneratedMSBuildEditorConfig.editorconfig
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net7.0\Lab_test.AssemblyInfoInputs.cache
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net7.0\Lab_test.AssemblyInfo.cs
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net7.0\Lab_test.csproj.CoreCompileInputs.cache
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net7.0\Lab_test.dll
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net7.0\refint\Lab_test.dll
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net7.0\Lab_test.pdb
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net7.0\Lab_test.genruntimeconfig.cache
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net7.0\ref\Lab_test.dll
+D:\OneDrive\Робочий стіл\University\Second Semester\Laboratories\Laboratory3\obj\Debug\net7.0\Lab_test.sourcelink.json

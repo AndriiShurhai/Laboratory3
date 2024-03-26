@@ -1,36 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\acer\\source\\repos\\mycodes\\.vs\\laba3 3sem\\Laboratory3\\Lab_test.csproj": {}
+    "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\Lab_test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\acer\\source\\repos\\mycodes\\.vs\\laba3 3sem\\Laboratory3\\Lab_test.csproj": {
+    "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\Lab_test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\source\\repos\\mycodes\\.vs\\laba3 3sem\\Laboratory3\\Lab_test.csproj",
+        "projectUniqueName": "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\Lab_test.csproj",
         "projectName": "Lab_test",
-        "projectPath": "C:\\Users\\acer\\source\\repos\\mycodes\\.vs\\laba3 3sem\\Laboratory3\\Lab_test.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\source\\repos\\mycodes\\.vs\\laba3 3sem\\Laboratory3\\obj\\",
+        "projectPath": "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\Lab_test.csproj",
+        "packagesPath": "C:\\Users\\ПК\\.nuget\\packages\\",
+        "outputPath": "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ПК\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -46,8 +42,8 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "imports": [
             "net461",
             "net462",
@@ -59,12 +55,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

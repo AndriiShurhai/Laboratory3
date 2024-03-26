@@ -13,7 +13,9 @@ namespace Block1
 
             int[] resultArray = CreateArrayWithoutKey(inputArray, key);
 
-            OutPut.OutputArray(resultArray);
+            SimpleOutPut.OutputArray(inputArray);
+            Console.WriteLine();
+            SimpleOutPut.OutputArray(resultArray);
 
             return resultArray;
         }
@@ -35,7 +37,6 @@ namespace Block1
         {
             int keyIndex = -1;
             int size = array.Length;
-            int[] resultArray = new int[size - 1];
 
             for (int i = 0; i < size; i++)
             {
@@ -52,17 +53,15 @@ namespace Block1
                 return array;
             }
 
-            for (int i = keyIndex; i > 0; i--)
+            for (int i = keyIndex + 1; i < size; i++)
             {
-                (array[i], array[i - 1]) = (array[i - 1], array[i]);
+                array[i - 1] = array[i];
+
             }
 
-            for (int i = 1; i < size; i++)
-            {
-                resultArray[i - 1] = array[i];
-            }
+            Array.Resize(ref array, size-1);
 
-            return resultArray;
+            return array;
         }
     }
 }

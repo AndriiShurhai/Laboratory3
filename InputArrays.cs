@@ -2,37 +2,41 @@ using System;
 
 namespace InputArrays
 {
-    class Input
+    class SimpleInput
     {
         public static int[] ExecuteInput(int[] array = null)
         {
-            Console.WriteLine("How do you want to generate array? With random numbers, manually on different lines, manually in one line or use previous result as an input?(random/modl/miol/prev): ");
-            String choice = Console.ReadLine().ToLower();
-            switch (choice)
+            do
             {
-                case "random":
-                    array = RandomArray();
-                    break;
-                case "modl":
-                    array = ManualArray();
-                    break;
-                case "miol":
-                    array = ManualArrayLine();
-                    break;
-                case "prev":
-                    if(array != null)
-                    {
-                        Console.WriteLine("We gonna use previous array as an input");
-                    }
-                    else
-                    {
-                        Console.WriteLine("There is no any previous array yet, try something else");
-                    }
-                    break;
-                default:
-                    Console.WriteLine("Wrong choice, select random, modl or miol");
-                    break;
-            }
+                Console.WriteLine("How do you want to generate array? With random numbers, manually on different lines, manually in one line or use previous result as an input?(random/modl/miol/prev): ");
+                String choice = Console.ReadLine().ToLower();
+                switch (choice)
+                {
+                    case "random":
+                        array = RandomArray();
+                        break;
+                    case "modl":
+                        array = ManualArray();
+                        break;
+                    case "miol":
+                        array = ManualArrayLine();
+                        break;
+                    case "prev":
+                        if (array != null)
+                        {
+                            Console.WriteLine("We gonna use previous array as an input");
+                        }
+                        else
+                        {
+                            Console.WriteLine("There is no any previous array yet, try something else");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Wrong choice, select random, modl or miol");
+                        break;
+                }
+            }while (array == null);
+
             return array;
         }
         public static int[] RandomArray()
@@ -69,6 +73,73 @@ namespace InputArrays
                 array[i] = Convert.ToInt32(sArray[i]);
             }
             return array;
+        }
+    }
+
+    class JuggedInput
+    {
+        public static int[][] ExecuteInput(int[][] array = null)
+        {
+            do
+            {
+                Console.WriteLine("How do you want to generate array? With random numbers, manually or use previous result as an input?(random/manual/prev)");
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "random":
+                        array = RandomJaggedArray();
+                        break;
+                    case "manual":
+                        array = ManualJaggedArray();
+                        break;
+                    case "prev":
+                        if (array != null)
+                        {
+                            Console.WriteLine("We gonna use previous array as an input");
+                        }
+                        else
+                        {
+                            Console.WriteLine("There is no any previous array yet, try something else.");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Unknown information");
+                        break;
+                }
+            } while (array == null);
+
+            return array;
+        }
+
+        public static int[][] RandomJaggedArray()
+        {
+            Console.Write("Enter amount of rows:");
+            int rows = int.Parse(Console.ReadLine());
+
+            int[][] jaggedArray = new int[rows][];
+
+            for (int i = 0;i < rows; i++)
+            {
+                jaggedArray[i] = SimpleInput.RandomArray();
+            }
+
+            return jaggedArray;
+        }
+
+        public static int[][] ManualJaggedArray()
+        {
+            Console.WriteLine("Enter amount of rows");
+            int rows = int.Parse(Console.ReadLine());
+
+            int[][] jaggedArray = new int[rows][];
+
+            for (int i = 0; i < rows; i++)
+            {
+                jaggedArray[i] = SimpleInput.ManualArrayLine();
+            }
+
+            return jaggedArray;
         }
     }
 }

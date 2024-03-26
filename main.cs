@@ -1,5 +1,6 @@
 using System;
 using Block1;
+using Block3;
 using InputArrays;
 namespace Lab
 {
@@ -14,18 +15,25 @@ namespace Lab
             string student;
             int block;
             int[] array;
+            int[][] jaggedArray;
             int[] prevResArray = null;
+            int[][] prevJaggedArray = null;
             do
             {
-                array = Input.ExecuteInput(prevResArray);
-                Console.WriteLine("Choose student:\nNazar\nKarina\nAndrii\nNone - end program");
+                Console.WriteLine("Generatting Common Array:");
+                array = InputArrays.SimpleInput.ExecuteInput(prevResArray);
+
+                Console.WriteLine("Generating Jagged Array: ");
+                jaggedArray = InputArrays.JuggedInput.ExecuteInput(prevJaggedArray);
+
+                Console.WriteLine("Choose student:\nNazar\nKarina\nAndrii");
                 student = Console.ReadLine();
-                Console.WriteLine("Choose block:\n1 - First Block\n2 - Third Block\n0 - return back");
-                block = int.Parse(Console.ReadLine());
 
                 switch (student)
                 {
                     case "Nazar":
+                        Console.WriteLine("Choose block:\n1 - First Block\n2 - Third Block\n0 - return back");
+                        block = int.Parse(Console.ReadLine());
                         switch (block)
                         {
                             case 1:
@@ -41,6 +49,8 @@ namespace Lab
                         break;
 
                     case "Karina":
+                        Console.WriteLine("Choose block:\n1 - First Block\n2 - Third Block\n0 - return back");
+                        block = int.Parse(Console.ReadLine());
                         switch (block)
                         {
                             case 1:
@@ -49,28 +59,33 @@ namespace Lab
                             case 2:
                                 Console.WriteLine("2");
                                 break;
-                            case 3:
-                                Console.WriteLine("3");
+                            case 0:
+                                Console.WriteLine("Returning back");
                                 break;
                         }
                         break;
 
                     case "Andrii":
+                        Console.WriteLine("Choose block:\n1 - First Block\n2 - Third Block\n0 - return back");
+                        block = int.Parse(Console.ReadLine());
                         switch (block)
                         {
                             case 1:
                                 prevResArray = Execute_Block1.Do(array);
                                 break;
                             case 2:
-                                Console.WriteLine("2");
+                                prevJaggedArray = Execute_Block3.Do(jaggedArray);
                                 break;
-                            case 3:
-                                Console.WriteLine("3");
+                            case 0:
+                                Console.WriteLine("Returning back");
                                 break;
                         }
                         break;
+                    default:
+                        Console.WriteLine("Unknown data. Let's start from beginning.");
+                        break;
                 }
-            } while (student != "None");
+            } while (student != "");
         }
     }
 }

@@ -1,16 +1,25 @@
 using System;
 
 namespace OutPutArrays {
-    class OutPut
+    class SimpleOutPut
     {
         public static void OutputArray(int[] array)
         {
-            Console.Write("Your Array: ");
-            foreach (var number in array)
+            foreach (int number in array)
             {
                 Console.Write($"{number} ");
             }
             Console.WriteLine();
+        }
+    }
+    class JaggedOutPut
+    {
+        public static void OutPutArray(int[][] array)
+        {
+            foreach (int[] arr in array)
+            {
+                SimpleOutPut.OutputArray(arr);
+            }
         }
     }
 }
