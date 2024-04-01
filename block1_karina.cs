@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Threading.Channels;
-using InputArrays;
+using OutPutArrays;
 namespace Block1_Karina
 {
     public class Block1Karina
@@ -9,26 +8,27 @@ namespace Block1_Karina
         {
             Console.WriteLine("Який спосіб? 1-вручну,2-бібліотечні методи,3-List");
             int n = Convert.ToInt32(Console.ReadLine());
+            SimpleOutPut.OutputArray(array);
             switch (n)
             {
                 case 1:
                     array = Block1_7(array);
-                    ShowArr(array);
+                    SimpleOutPut.OutputArray(array);
                     break;
                 case 2:
                     array = Block1_7_library(array);
-                    ShowArr(array);
+                    SimpleOutPut.OutputArray(array);
                     break;
                 case 3:
                     List<int> arrList = array.ToList();
-                    ArrToList(arrList);
-
+                    Block1_7_list(arrList);
                     break;
 
                 default:
                     Console.WriteLine("Введіть число");
                     break;
             }
+           
             return array;
         }
         public static int[] Block1_7(int[] array)
@@ -80,7 +80,7 @@ namespace Block1_Karina
             return array;
         }
         //list
-        public static void ArrToList(List<int> listFromArr)
+        public static void Block1_7_list(List<int> listFromArr)
         {
             if (!listFromArr.Any(x => x % 2 == 0))
             {
@@ -93,12 +93,6 @@ namespace Block1_Karina
                 Console.Write(i + " ");
             }
         }
-        public static void ShowArr(int[] arr)
-        {
-            foreach (int i in arr)
-            {
-                Console.Write(i + " ");
-            }
-        }
+
     }
 }

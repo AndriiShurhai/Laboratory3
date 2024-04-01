@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
-
+using System;
+using OutPutArrays;
 namespace Block3_Karina
 {
     public class Block3Karina
@@ -16,29 +17,18 @@ namespace Block3_Karina
             if (K1 < 0 || K2 >= array.Length)
             {
                 Console.WriteLine("Index was outside the bounds of the array.");
-                Console.ReadKey();
                 return array;
             }
+            JaggedOutPut.OutPutArray(array);
+            Console.WriteLine();
+            JaggedOutPut.OutPutArray(ArrayWithoutRows(array, K1, K2));
+            return ArrayWithoutRows(array, K1, K2);
+        }
+        
+        public static int[][] ArrayWithoutRows(int[][] array, int K1, int K2)
+        {
             int range = K2 - K1 + 1;
             int[][] erasedArr = new int[array.Length - range][];
-            Console.WriteLine("Enter subarrays");
-            InputArr(array);
-            erasedArr = EraseRows(array, erasedArr, K1, K2);
-            Console.WriteLine("Your array:");
-            ShowArray(erasedArr);
-            Console.ReadKey();
-            return array;
-        }
-        public static int[][] InputArr(int[][] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = Array.ConvertAll(Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries), int.Parse);
-            }
-            return array;
-        }
-        public static int[][] EraseRows(int[][] array, int[][] erasedArr, int K1, int K2)
-        {
             int count = 0;
             for (int i = 0; i < array.Length; i++)
             {
@@ -51,19 +41,7 @@ namespace Block3_Karina
             }
             return erasedArr;
         }
-        public static int[][] ShowArray(int[][] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                for (int j = 0; j < array[i].Length; j++)
-                {
-
-                    Console.Write($"{array[i][j]} ");
-                }
-                Console.WriteLine();
-            }
-            return array;
-        }
+       
     }
 
 }

@@ -5,6 +5,7 @@ using InputArrays;
 using Block1Nazariy;
 using Block3Nazariy;
 using Block1_Karina;
+using Block3_Karina;
 
 
 namespace Lab
@@ -60,11 +61,10 @@ namespace Lab
                         switch (block)
                         {
                             case 1:
-                                Console.WriteLine("1");
                                 prevResArray=Block1Karina.Start(array);
                                 break;
                             case 2:
-                                Console.WriteLine("2");
+                                prevJaggedArray = Block3Karina.Start(jaggedArray);
                                 break;
                             case 0:
                                 Console.WriteLine("Returning back");
