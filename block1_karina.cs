@@ -13,22 +13,21 @@ namespace Block1_Karina
             {
                 case 1:
                     array = Block1_7(array);
-                    SimpleOutPut.OutputArray(array);
                     break;
                 case 2:
                     array = Block1_7_library(array);
-                    SimpleOutPut.OutputArray(array);
                     break;
                 case 3:
                     List<int> arrList = array.ToList();
-                    Block1_7_list(arrList);
+                    arrList = Block1_7_list(arrList);
+                    array=arrList.ToArray();
                     break;
 
                 default:
                     Console.WriteLine("Введіть число");
                     break;
             }
-           
+            SimpleOutPut.OutputArray(array);
             return array;
         }
         public static int[] Block1_7(int[] array)
@@ -80,7 +79,7 @@ namespace Block1_Karina
             return array;
         }
         //list
-        public static void Block1_7_list(List<int> listFromArr)
+        public static List<int> Block1_7_list(List<int> listFromArr)
         {
             if (!listFromArr.Any(x => x % 2 == 0))
             {
@@ -88,10 +87,8 @@ namespace Block1_Karina
                 return;
             }
             listFromArr.RemoveAll(x => x % 2 != 0);
-            foreach (int i in listFromArr)
-            {
-                Console.Write(i + " ");
-            }
+            
+            return listFromArr;
         }
 
     }
