@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KXFjQUfAXBTlM28OYq21JDb+A5Mipls5bU3ovZxSwi4vMcc/9Ig9vlMIE5A5vh9QzKKfzMCQ89wMs2AGdRaABg==",
+  "dgSpecHash": "/haXkqLkQxi1PDoA2aDdi2TqZgyvJswCfSpo9nsZ8jl64SkWQe8I7UtRZfwgBORT6pIpbDTn4ScAB9c6y4wjUw==",
   "success": true,
-  "projectFilePath": "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\Lab_test.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\ПК\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
-    "C:\\Users\\ПК\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
-    "C:\\Users\\ПК\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
-    "C:\\Users\\ПК\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.17\\microsoft.netcore.app.host.win-x64.7.0.17.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\mycodes\\Laboratory3\\Lab_test.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

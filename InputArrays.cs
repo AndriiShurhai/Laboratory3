@@ -1,5 +1,4 @@
 using System;
-
 namespace InputArrays
 {
     class SimpleInput
@@ -65,7 +64,6 @@ namespace InputArrays
             {
                 array[i] = r.Next(-101, 101);
             }
-
             return array;
         }
 
@@ -127,7 +125,7 @@ namespace InputArrays
         }
     }
 
-    class JuggedInput
+    class JaggedInput
     {
         public static int[][] ExecuteInput(int[][] array = null)
         {
