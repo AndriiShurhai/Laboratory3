@@ -9,11 +9,10 @@ namespace Block1
     {
         public static int[] Do(int[] inputArray)
         {
-            int key = GetUsersKey();
-
-            int[] resultArray = CreateArrayWithoutKey(inputArray, key);
-
+            Console.WriteLine("Array working with: ");
             SimpleOutPut.OutputArray(inputArray);
+            int key = GetUsersKey();
+            int[] resultArray = CreateArrayWithoutKey(inputArray, key);
             Console.WriteLine();
             SimpleOutPut.OutputArray(resultArray);
 

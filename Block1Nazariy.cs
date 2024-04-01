@@ -1,34 +1,31 @@
 ﻿using System.Runtime.ExceptionServices;
-using InputArrays;
+using OutPutArrays;
 namespace Block1Nazariy
 {
     public class Block1N
     {
-        public static int[] Start(int[] array)
+        public static int[] Run(int[] array)
         {
             ChoosingTask(array);
             return array;
         }
         public static int[] ChoosingTask(int[] array)
         {
-            
             Console.WriteLine("Choose a way: \n 1 - normal, 2 - using methods, 3 - using list");
             byte way = Convert.ToByte(Console.ReadLine());
+            SimpleOutPut.OutputArray(array);
             switch (way)
             {
                 case 1:
-                    ShowArray(array);
                     array = InsertAbsV14(array);
-                    ShowArray(array);
+                    SimpleOutPut.OutputArray(array);
                     break;
                 case 2:
-                    ShowArrayLib(array);
                     array = InsertAbsV14Lib(array);
-                    ShowArrayLib(array);
+                    SimpleOutPut.OutputArray(array);
                     break;
                 case 3:
                     List<int> list = array.ToList();
-                    ShowList(list);
                     list = InsertAbsV14List(list);
                     ShowList(list);
                     break;
@@ -37,16 +34,6 @@ namespace Block1Nazariy
                     return array;
             }
             return array;
-        }
-        
-        public static void ShowArray(int[] array)
-        {
-            Console.WriteLine("Your array: ");
-            foreach (var i in array)
-            {
-                Console.Write(i + " ");
-            }
-            Console.WriteLine();
         }
         public static int AmountOfNegativeNumbers(int[] array)
         {
@@ -85,10 +72,6 @@ namespace Block1Nazariy
             return newArr;
         }
         // USING LIBRARY METHODS
-        public static void ShowArrayLib(int[] array)
-        {
-            Console.WriteLine("Your array: \n {0}", string.Join(' ', array));
-        }
         public static int[] InsertAbsV14Lib(int[] array)
         {
             if (!array.Any(x => x < 0))

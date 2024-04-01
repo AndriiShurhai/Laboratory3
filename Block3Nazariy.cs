@@ -1,24 +1,17 @@
 ﻿using System.Runtime.InteropServices;
 using System;
+using OutPutArrays;
 namespace Block3Nazariy
 {
-    class Program
+    class Block3N
     {
         // question: 38 рядок, чи можна так зробить?
-        public static void Do()
+        public static int[][] Run(int[][] array)
         {
-            int[][] array = InputArray();
+            JaggedOutPut.OutPutArray(array);
             array = Block3_V12(array);
-            ShowArray(array);
-        }
-        public static void ShowArray(int[][] array)
-        {
-            Console.WriteLine("Your array: ");
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(string.Join(" ", array[i]));
-            }
-            Console.WriteLine();
+            JaggedOutPut.OutPutArray(array);
+            return array;
         }
         public static int[][] Block3_V12(int[][] array)
         {
@@ -43,18 +36,6 @@ namespace Block3Nazariy
             // 4 6 7 1 5 3 0 -> 4 6 7 1 5 0 3 -> 4 6 7 1 0 5 3 -> 4 6 7 0 1 5 3 -> 4 6 0 7 1 5 3;
             array[maxIdx] = insert;
             // 4 6 0 7 1 5 3 -> 4 6 9 7 1 5 3;
-            return array;
-        }
-        public static int[][] InputArray()
-        {
-            Console.WriteLine("Input amount of subarrays in array: ");
-            int N = Convert.ToInt32(Console.ReadLine());
-            int[][] array = new int[N][];
-            for (int i = 0; i < N; i++)
-            {
-                Console.WriteLine($"Input elements of {i + 1} subarray");
-                array[i] = Array.ConvertAll(Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries), Convert.ToInt32);
-            }
             return array;
         }
         /*public static List<int> Block3_V12List()*/
