@@ -1,32 +1,17 @@
 ﻿using System.Runtime.ExceptionServices;
-namespace NazariyBlock1
+using InputArrays;
+namespace Block1Nazariy
 {
-    internal class Program
+    public class Block1
     {
-        public static void Do()
+        public static int[] Start(int[] array)
         {
-            ChoosingTask();
+            ChoosingTask(array);
+            return array;
         }
-        public static void ChoosingTask()
+        public static int[] ChoosingTask(int[] array)
         {
-            int[] array;
-            Console.WriteLine("How do you want to generate array? With random numbers, manually on different lines or manually in one line?(random/modl/miol): ");
-            String choice = Console.ReadLine().ToLower();
-            switch (choice)
-            {
-                case "random":
-                    array = RandomArray();
-                    break;
-                case "modl":
-                    array = ArrayEnter();
-                    break;
-                case "miol":
-                    array = ArrayOneLine();
-                    break;
-                default:
-                    Console.WriteLine("Wrong choice: select random, modl or miol");
-                    return;
-            }
+            
             Console.WriteLine("Choose a way: \n 1 - normal, 2 - using methods, 3 - using list");
             byte way = Convert.ToByte(Console.ReadLine());
             switch (way)
@@ -49,44 +34,11 @@ namespace NazariyBlock1
                     break;
                 default:
                     Console.WriteLine("Wrong way, you lost.");
-                    return;
-            }
-        }
-        public static int[] RandomArray()
-        {
-            Console.WriteLine("Type amount of elements: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int[] array = new int[n];
-            Random r = new Random();
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = r.Next(-101, 101);
+                    return array;
             }
             return array;
         }
-        public static int[] ArrayEnter()
-        {
-            Console.WriteLine("Type amount of elements: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int[] modlArray = new int[n];
-            Console.WriteLine("Input elements: ");
-            for (int i = 0; i < n; i++)
-            {
-                modlArray[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            return modlArray;
-        }
-        public static int[] ArrayOneLine()
-        {
-            Console.WriteLine("Type elements: ");
-            String[] sArray = Console.ReadLine().Split(" \t".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-            int[] array = new int[sArray.Length];
-            for (int i = 0; i < sArray.Length; i++)
-            {
-                array[i] = Convert.ToInt32(sArray[i]);
-            }
-            return array;
-        }
+        
         public static void ShowArray(int[] array)
         {
             Console.WriteLine("Your array: ");

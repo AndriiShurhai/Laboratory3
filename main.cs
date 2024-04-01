@@ -2,6 +2,8 @@ using System;
 using Block1;
 using Block3;
 using InputArrays;
+using Block1Nazariy;
+using Block3Nazariy;
 namespace Lab
 {
     class Task
@@ -20,7 +22,7 @@ namespace Lab
             int[][] prevJaggedArray = null;
             do
             {
-                Console.WriteLine("Generatting Common Array:");
+                Console.WriteLine("Generating Common Array:");
                 array = InputArrays.SimpleInput.ExecuteInput(prevResArray);
 
                 Console.WriteLine("Generating Jagged Array: ");
@@ -38,6 +40,7 @@ namespace Lab
                         {
                             case 1:
                                 Console.WriteLine("1");
+                                prevResArray = Block1.Start(array);
                                 break;
                             case 2:
                                 Console.WriteLine("3");

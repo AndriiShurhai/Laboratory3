@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
-
-namespace NazariyBlock3
+using System;
+namespace Block3Nazariy
 {
     class Program
     {
