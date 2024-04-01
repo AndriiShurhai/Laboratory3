@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\laba3\\Lab_test.csproj": {}
+    "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\Lab_test.csproj": {}
   },
   "projects": {
-    "D:\\laba3\\Lab_test.csproj": {
+    "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\Lab_test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\laba3\\Lab_test.csproj",
+        "projectUniqueName": "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\Lab_test.csproj",
         "projectName": "Lab_test",
-        "projectPath": "D:\\laba3\\Lab_test.csproj",
-        "packagesPath": "C:\\Users\\karin\\.nuget\\packages\\",
-        "outputPath": "D:\\laba3\\obj\\",
+        "projectPath": "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\Lab_test.csproj",
+        "packagesPath": "C:\\Users\\ПК\\.nuget\\packages\\",
+        "outputPath": "D:\\OneDrive\\Робочий стіл\\University\\Second Semester\\Laboratories\\Laboratory3\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\karin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ПК\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

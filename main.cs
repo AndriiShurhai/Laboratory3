@@ -27,9 +27,11 @@ namespace Lab
             {
                 Console.WriteLine("\nGenerating Common Array:");
                 array = InputArrays.SimpleInput.ExecuteInput(prevResArray);
+                prevResArray = prevResArray == null ? array : prevResArray;
 
                 Console.WriteLine("\nGenerating Jagged Array: ");
                 jaggedArray = InputArrays.JuggedInput.ExecuteInput(prevJaggedArray);
+                prevJaggedArray = prevJaggedArray == null ? jaggedArray : prevJaggedArray;
 
                 Console.WriteLine("\nChoose student:\nNazar\nKarina\nAndrii");
                 student = Console.ReadLine();

@@ -6,8 +6,10 @@ namespace InputArrays
     {
         public static int[] ExecuteInput(int[] array = null)
         {
+            bool wrongChoice;
             do
             {
+                wrongChoice = false;
                 Console.WriteLine("How do you want to generate array? With random numbers, manually on different lines, manually in one line or use previous result as an input?(random/modl/miol/prev): ");
                 String choice = Console.ReadLine().ToLower();
                 switch (choice)
@@ -29,49 +31,98 @@ namespace InputArrays
                         else
                         {
                             Console.WriteLine("There is no any previous array yet, try something else");
+                            wrongChoice = true;
                         }
                         break;
                     default:
                         Console.WriteLine("Wrong choice, select random, modl or miol");
+                        wrongChoice = true;
                         break;
                 }
-            }while (array == null);
+            } while (array == null || wrongChoice);
 
             return array;
         }
+
         public static int[] RandomArray()
         {
-            Console.WriteLine("Type amount of elements: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int[] array = new int[n];
+            int[] array;
+            bool validInput = true;
+            int n;
+            do
+            {
+                Console.WriteLine("Type amount of elements: ");
+                validInput = int.TryParse(Console.ReadLine(), out n);
+                if (!validInput)
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    continue;
+                }
+            } while (!validInput || n == 0);
+            array = new int[n];
             Random r = new Random();
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] = r.Next(-101, 101);
             }
+
             return array;
         }
+
         public static int[] ManualArray()
         {
-            Console.WriteLine("Type amount of elements: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int[] modlArray = new int[n];
-            Console.WriteLine("Input elements: ");
-            for (int i = 0; i < n; i++)
+            int[] array;
+            bool validInput = true;
+            int n;
+            do
             {
-                modlArray[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            return modlArray;
+                Console.WriteLine("Type amount of elements: ");
+                validInput = int.TryParse(Console.ReadLine(), out n);
+                if (!validInput)
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    continue;
+                }
+            } while (!validInput);
+
+            array = new int[n];
+
+            do
+            {
+                Console.WriteLine("Input elements: ");
+                for (int i = 0; i < n; i++)
+                {
+                    validInput = int.TryParse(Console.ReadLine(), out array[i]);
+                    if (!validInput)
+                    {
+                        Console.WriteLine("Invalid input. Please enter a valid integer.");
+                        break;
+                    }
+                }
+            } while (!validInput || array.Length == 0);
+            return array;
         }
+
         public static int[] ManualArrayLine()
         {
-            Console.WriteLine("Type elements: ");
-            String[] sArray = Console.ReadLine().Split(" \t".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-            int[] array = new int[sArray.Length];
-            for (int i = 0; i < sArray.Length; i++)
+            int[] array;
+            bool validInput = true; 
+            do
             {
-                array[i] = Convert.ToInt32(sArray[i]);
-            }
+                Console.WriteLine("Type elements: ");
+                string[] sArray = Console.ReadLine().Split(" \t".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                array = new int[sArray.Length];
+                for (int i = 0; i < sArray.Length; i++)
+                {
+                    validInput = int.TryParse(sArray[i], out array[i]);
+                    if (!validInput)
+                    {
+                        Console.WriteLine("Invalid input. Please enter valid integers separated by spaces.");
+                        break;
+                    }
+                }
+            } while (!validInput || array.Length == 0);
+
             return array;
         }
     }
@@ -80,8 +131,10 @@ namespace InputArrays
     {
         public static int[][] ExecuteInput(int[][] array = null)
         {
+            bool wrongChoice;
             do
             {
+                wrongChoice = false;
                 Console.WriteLine("How do you want to generate array? With random numbers, manually or use previous result as an input?(random/manual/prev)");
                 string choice = Console.ReadLine();
 
@@ -101,25 +154,37 @@ namespace InputArrays
                         else
                         {
                             Console.WriteLine("There is no any previous array yet, try something else.");
+                            wrongChoice = true;
                         }
                         break;
                     default:
                         Console.WriteLine("Unknown information");
+                        wrongChoice = true;
                         break;
                 }
-            } while (array == null);
+            } while (array == null || wrongChoice);
 
             return array;
         }
 
         public static int[][] RandomJaggedArray()
         {
-            Console.Write("Enter amount of rows:");
-            int rows = int.Parse(Console.ReadLine());
+            int[][] jaggedArray;
+            bool validInput = true;
+            int rows;
+            do
+            {
+                Console.Write("Enter amount of rows:");
+                validInput = int.TryParse(Console.ReadLine(), out rows);
+                if (!validInput)
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    continue;
+                }
+            } while (!validInput || rows == 0);
 
-            int[][] jaggedArray = new int[rows][];
-
-            for (int i = 0;i < rows; i++)
+            jaggedArray = new int[rows][];
+            for (int i = 0; i < rows; i++)
             {
                 jaggedArray[i] = SimpleInput.RandomArray();
             }
@@ -129,11 +194,20 @@ namespace InputArrays
 
         public static int[][] ManualJaggedArray()
         {
-            Console.WriteLine("Enter amount of rows");
-            int rows = int.Parse(Console.ReadLine());
-
-            int[][] jaggedArray = new int[rows][];
-
+            int[][] jaggedArray;
+            bool validInput = true;
+            int rows;
+            do
+            {
+                Console.WriteLine("Enter amount of rows");
+                validInput = int.TryParse(Console.ReadLine(), out rows);
+                if (!validInput)
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    continue;
+                }
+            } while (!validInput || rows == 0);
+            jaggedArray = new int[rows][];
             for (int i = 0; i < rows; i++)
             {
                 jaggedArray[i] = SimpleInput.ManualArrayLine();
@@ -143,4 +217,3 @@ namespace InputArrays
         }
     }
 }
-
