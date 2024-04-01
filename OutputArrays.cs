@@ -5,6 +5,7 @@ namespace OutPutArrays {
     {
         public static void OutputArray(int[] array)
         {
+            Console.WriteLine("Your array");
             foreach (int number in array)
             {
                 Console.Write($"{number} ");
@@ -16,6 +17,7 @@ namespace OutPutArrays {
     {
         public static void OutPutArray(int[][] array)
         {
+            Console.WriteLine("Your array");
             foreach (int[] arr in array)
             {
                 SimpleOutPut.OutputArray(arr);
