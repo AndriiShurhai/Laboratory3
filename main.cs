@@ -4,6 +4,9 @@ using Block3;
 using InputArrays;
 using Block1Nazariy;
 using Block3Nazariy;
+using Block1_Karina;
+
+
 namespace Lab
 {
     class Task
@@ -22,13 +25,13 @@ namespace Lab
             int[][] prevJaggedArray = null;
             do
             {
-                Console.WriteLine("Generating Common Array:");
+                Console.WriteLine("\nGenerating Common Array:");
                 array = InputArrays.SimpleInput.ExecuteInput(prevResArray);
 
-                Console.WriteLine("Generating Jagged Array: ");
+                Console.WriteLine("\nGenerating Jagged Array: ");
                 jaggedArray = InputArrays.JuggedInput.ExecuteInput(prevJaggedArray);
 
-                Console.WriteLine("Choose student:\nNazar\nKarina\nAndrii");
+                Console.WriteLine("\nChoose student:\nNazar\nKarina\nAndrii");
                 student = Console.ReadLine();
 
                 switch (student)
@@ -40,7 +43,7 @@ namespace Lab
                         {
                             case 1:
                                 Console.WriteLine("1");
-                                prevResArray = Block1.Start(array);
+                                prevResArray = Block1N.Start(array);
                                 break;
                             case 2:
                                 Console.WriteLine("3");
@@ -58,6 +61,7 @@ namespace Lab
                         {
                             case 1:
                                 Console.WriteLine("1");
+                                prevResArray=Block1Karina.Start(array);
                                 break;
                             case 2:
                                 Console.WriteLine("2");

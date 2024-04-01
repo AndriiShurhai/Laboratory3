@@ -2,7 +2,7 @@
 using InputArrays;
 namespace Block1Nazariy
 {
-    public class Block1
+    public class Block1N
     {
         public static int[] Start(int[] array)
         {
