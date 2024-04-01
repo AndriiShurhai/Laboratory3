@@ -6,11 +6,6 @@ namespace Block1Nazariy
     {
         public static int[] Run(int[] array)
         {
-            ChoosingTask(array);
-            return array;
-        }
-        public static int[] ChoosingTask(int[] array)
-        {
             Console.WriteLine("Choose a way: \n 1 - normal, 2 - using methods, 3 - using list");
             byte way = Convert.ToByte(Console.ReadLine());
             SimpleOutPut.OutputArray(array);
@@ -18,21 +13,20 @@ namespace Block1Nazariy
             {
                 case 1:
                     array = InsertAbsV14(array);
-                    SimpleOutPut.OutputArray(array);
                     break;
                 case 2:
                     array = InsertAbsV14Lib(array);
-                    SimpleOutPut.OutputArray(array);
                     break;
                 case 3:
                     List<int> list = array.ToList();
                     list = InsertAbsV14List(list);
-                    ShowList(list);
+                    array = list.ToArray();
                     break;
                 default:
                     Console.WriteLine("Wrong way, you lost.");
                     return array;
             }
+            SimpleOutPut.OutputArray(array);
             return array;
         }
         public static int AmountOfNegativeNumbers(int[] array)
@@ -97,10 +91,6 @@ namespace Block1Nazariy
             return newArr;
         }
         // USING LIST
-        public static void ShowList(List<int> list)
-        {
-            Console.WriteLine("Your list: \n {0}", string.Join(' ', list));
-        }
         public static List<int> InsertAbsV14List(List<int> list)
         {
             if (!list.Any(x => x < 0))
