@@ -6,15 +6,15 @@ namespace Block3
 {
     public class Execute_Block3
     {
-        public static int[][] Do(int[][] inputArray)
+        public static int[][] Do(int[][] array)
         {
             int k = GetKNumber();
-            JaggedOutPut.OutPutArray(inputArray);
-            int[][] resultArray = AddKRows(k, inputArray);
+            JaggedOutPut.OutPutArray(array);
+            AddKRows(k, ref array);
             Console.WriteLine();
-            JaggedOutPut.OutPutArray(resultArray);
+            JaggedOutPut.OutPutArray(array);
 
-            return resultArray;
+            return array;
         }
         public static int GetKNumber()
         {
@@ -29,7 +29,7 @@ namespace Block3
             return k;
         }
 
-        public static int[][] AddKRows(int k, int[][] array)
+        public static void AddKRows(int k, ref int[][] array)
         {
             Array.Resize(ref array, array.Length + k);
 
@@ -38,8 +38,6 @@ namespace Block3
                 int[] arr = SimpleInput.ManualArrayLine();
                 array[i] = arr;
             }
-
-            return array;
         }
     }
 }
