@@ -45,17 +45,20 @@ namespace Block1_Karina
                 Console.WriteLine("There are no odd elements");
                 return array;
             }
-            for (int i = 0; i < array.Length; i++)
+            int temp, even;
+            for (int i = 0; i < n - 1; i++)
             {
-                for (int j = 0; j < array.Length - 1; j++)
+                even = i;
+                for (int j = i + 1; j < n; j++)
                 {
-                    if (array[j] % 2 != 0 && array[j + 1] % 2 == 0)
-                    {
-                        int swap = array[j];
-                        array[j] = array[j + 1];
-                        array[j + 1] = swap;
+                    if (array[j] < array[even])
+                    { 
+                        even = j;
                     }
                 }
+                temp = array[even];
+                array[even] = array[i];
+                array[i] = temp;
             }
             Array.Resize(ref array, array.Length - count);
             return array;
@@ -84,7 +87,7 @@ namespace Block1_Karina
             if (!listFromArr.Any(x => x % 2 == 0))
             {
                 Console.WriteLine("There are no odd elements");
-                return;
+                return listFromArr;
             }
             listFromArr.RemoveAll(x => x % 2 != 0);
             
