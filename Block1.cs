@@ -115,7 +115,7 @@ namespace Block1
 
             }
 
-            Array.Resize(ref array, size-1);
+            Array.Resize(ref array, size - 1);
 
         }
 
