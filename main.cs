@@ -6,92 +6,135 @@ using Block1Nazariy;
 using Block3Nazariy;
 using Block1_Karina;
 using Block3_Karina;
+using OutPutArrays;
+using System.Threading.Channels;
+
 namespace Lab
 {
     class Task
     {
-        static void Main() 
+        static void Main()
         {
             Executing();
         }
+
         static void Executing()
         {
-            string student;
-            int block;
-            int[] array = null;
-            int[][] jaggedArray = null;
             int[] prevResArray = null;
             int[][] prevJaggedArray = null;
-            do
+
+            while (true)
             {
-                Console.WriteLine("\nChoose student:\nNazar\nKarina\nAndrii");
-                student = Console.ReadLine();
-                Console.WriteLine("Choose block:\n1 - First Block\n2 - Third Block\n0 - return back");
-                block = int.Parse(Console.ReadLine());
-                if(block == 1)
-                {
-                    Console.WriteLine("\nGenerating Common Array:");
-                    array = InputArrays.SimpleInput.ExecuteInput(prevResArray);
-                    prevResArray = prevResArray == null ? array : prevResArray;
-                }
-                else if(block == 2)
-                {
-                    Console.WriteLine("\nGenerating Jagged Array: ");
-                    jaggedArray = InputArrays.JaggedInput.ExecuteInput(prevJaggedArray);
-                    prevJaggedArray = prevJaggedArray == null ? jaggedArray : prevJaggedArray;
-                }
-                switch (student)
-                {
-                    case "Nazar":
-                        
-                        switch (block)
-                        {
-                            case 1:
-                                prevResArray = Block1N.Run(array);
-                                break;
-                            case 2:
-                                prevJaggedArray = Block3N.Run(jaggedArray);
-                                break;
-                            case 0:
-                                Console.WriteLine("Returning back");
-                                break;
-                        }
-                        break;
+                string[] students = { "Nazar", "Karina", "Andrii" };
+                string student = SelectStudent();
 
-                    case "Karina":
-                        switch (block)
-                        {
-                            case 1:
-                                prevResArray = Block1Karina.Start(array);
-                                break;
-                            case 2:
-                                prevJaggedArray = Block3Karina.Start(jaggedArray);
-                                break;
-                            case 0:
-                                Console.WriteLine("Returning back");
-                                break;
-                        }
-                        break;
+                if (students.Contains(student))
+                {
+                    int block = SelectBlock();
 
-                    case "Andrii":
-                        switch (block)
-                        {
-                            case 1:
-                                prevResArray = Execute_Block1.Do(array);
-                                break;
-                            case 2:
-                                prevJaggedArray = Execute_Block3.Do(jaggedArray);
-                                break;
-                            case 0:
-                                Console.WriteLine("Returning back");
-                                break;
-                        }
-                        break;
-                    default:
-                        Console.WriteLine("Unknown data. Let's start from beginning.");
-                        break;
+                    if (block == 0)
+                    {
+                        Console.WriteLine("Returning back.");
+                    }
+
+                    prevResArray = block == 1 ? ExecuteBlock1(student, prevResArray) : prevResArray;
+                    prevJaggedArray = block == 2 ? ExecuteBlock3(student, prevJaggedArray) : prevJaggedArray;
                 }
-            } while (student != "");
+                else
+                {
+                    Console.WriteLine("Unknown student.");
+                }
+                CheckCurrentArray(prevResArray, prevJaggedArray);
+            }
+        }
+
+        static void CheckCurrentArray(int[] array, int[][] jaggedArray)
+        {
+            string choice;
+            Console.WriteLine("Display current condition of arrays?\nyes/no");
+            choice = Console.ReadLine().ToLower();
+
+            switch (choice)
+            {
+                case "yes":
+
+                    Console.WriteLine("Current condition of simple array:");
+                    if (array == null)
+                    {
+                        Console.WriteLine("Array is not created yet.");
+                    }
+                    else
+                    {
+                        SimpleOutPut.OutputArray(array);
+                    }
+
+                    Console.WriteLine();
+
+                    Console.WriteLine("Current condition of jagged array:");
+                    if (jaggedArray == null)
+                    {
+                        Console.WriteLine("Array is not created yet.");
+                    }
+                    else
+                    {
+                        JaggedOutPut.OutPutArray(jaggedArray);
+                    }
+
+                    break;
+                case "no":
+                    Console.WriteLine("Okay");
+                    break;
+                default:
+                    Console.WriteLine("Learn how to type and try next time buddy.");
+                    break;
+            }
+        }
+
+        static string SelectStudent()
+        {
+            Console.WriteLine("\nChoose student:\nNazar\nKarina\nAndrii");
+            return Console.ReadLine();
+        }
+
+        static int SelectBlock()
+        {
+            Console.WriteLine("Choose block:\n1 - First Block\n2 - Third Block\n0 - return back");
+            int block;
+            while (!int.TryParse(Console.ReadLine(), out block) && block < 0 && block > 2)
+            {
+                Console.WriteLine("Error, invalid input. Please try again.");
+            }
+            return block;
+        }
+
+        static int[] ExecuteBlock1(string student, int[] prevResArray)
+        {
+            switch (student)
+            {
+                case "Nazar":
+                    return Block1N.Run(InputArrays.SimpleInput.ExecuteInput(prevResArray));
+                case "Karina":
+                    return Block1Karina.Start(InputArrays.SimpleInput.ExecuteInput(prevResArray));
+                case "Andrii":
+                    return Execute_Block1.Do(InputArrays.SimpleInput.ExecuteInput(prevResArray));
+                default:
+                    return prevResArray;
+            }
+        }
+
+        static int[][] ExecuteBlock3(string student, int[][] prevJaggedArray)
+        {
+            switch (student)
+            {
+                case "Nazar":
+                    return Block3N.Run(InputArrays.JaggedInput.ExecuteInput(prevJaggedArray));
+                case "Karina":
+                    return Block3Karina.Start(InputArrays.JaggedInput.ExecuteInput(prevJaggedArray));
+                case "Andrii":
+                    return Execute_Block3.Do(InputArrays.JaggedInput.ExecuteInput(prevJaggedArray));
+                default:
+                    return prevJaggedArray;
+            }
         }
     }
 }

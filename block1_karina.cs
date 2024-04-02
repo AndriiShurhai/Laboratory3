@@ -12,7 +12,7 @@ namespace Block1_Karina
             switch (n)
             {
                 case 1:
-                    array = Block1_7(array);
+                    array = Block1_7(ref array);
                     break;
                 case 2:
                     array = Block1_7_library(array);
@@ -30,7 +30,7 @@ namespace Block1_Karina
             SimpleOutPut.OutputArray(array);
             return array;
         }
-        public static int[] Block1_7(int[] array)
+        public static int[] Block1_7(ref int[] array)
         {
             int count = 0;
             for (int i = 0; i < array.Length; i++)
@@ -45,20 +45,23 @@ namespace Block1_Karina
                 Console.WriteLine("There are no odd elements");
                 return array;
             }
-            int temp, even;
-            for (int i = 0; i < n - 1; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                even = i;
-                for (int j = i + 1; j < n; j++)
+                bool exchange= false;
+                for (int j = 0; j < array.Length - i - 1; j++)
                 {
-                    if (array[j] < array[even])
-                    { 
-                        even = j;
+                    if (array[j] % 2 != 0 && array[j + 1] % 2 == 0)
+                    {
+                        int swap = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = swap;
+                        exchange = true;
                     }
                 }
-                temp = array[even];
-                array[even] = array[i];
-                array[i] = temp;
+                if (!exchange)
+                {
+                    break;
+                }
             }
             Array.Resize(ref array, array.Length - count);
             return array;
