@@ -84,7 +84,7 @@ namespace Block1_Karina
             if (!listFromArr.Any(x => x % 2 == 0))
             {
                 Console.WriteLine("There are no odd elements");
-                return;
+                return listFromArr;
             }
             listFromArr.RemoveAll(x => x % 2 != 0);
             
