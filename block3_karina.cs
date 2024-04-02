@@ -7,7 +7,7 @@ namespace Block3_Karina
     {
         public static int[][] Start(int[][] array)
         {
-            Console.WriteLine("Enter numbers");
+            Console.WriteLine("Enter two numbers on different lines");
             int K1 = Convert.ToInt32(Console.ReadLine()) - 1;
             int K2 = Convert.ToInt32(Console.ReadLine()) - 1;
             if (K1 > K2)
