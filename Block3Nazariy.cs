@@ -9,11 +9,11 @@ namespace Block3Nazariy
         public static int[][] Run(int[][] array)
         {
             JaggedOutPut.OutPutArray(array);
-            array = Block3_V12(array);
+            array = Block3_V12(ref array);
             JaggedOutPut.OutPutArray(array);
             return array;
         }
-        public static int[][] Block3_V12(int[][] array)
+        public static int[][] Block3_V12(ref int[][] array)
         {
             int max = int.MinValue;
             int maxIdx = 0;
