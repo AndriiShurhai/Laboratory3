@@ -14,7 +14,10 @@ namespace Block1
 
 
             Console.WriteLine("Choose version to execute:\n1 - manual version\n2 - libraries version\n3 - lists version\n0 - return back");
-            choice = int.Parse(Console.ReadLine());
+            while (!(int.TryParse(Console.ReadLine(), out choice)) || (choice < 0 || choice > 3))
+            {
+                Console.WriteLine("Error. Try again");
+            }
 
             switch (choice)
             {
