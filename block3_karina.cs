@@ -12,7 +12,9 @@ namespace Block3_Karina
             int K2 = Convert.ToInt32(Console.ReadLine()) - 1;
             if (K1 > K2)
             {
-                (K1, K2) = (K2, K1);
+                int temp = K1;
+                K1 = K2;
+                K2 = temp;
             }
             if (K1 < 0 || K2 >= array.Length)
             {
