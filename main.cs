@@ -30,7 +30,7 @@ namespace Lab
 
                 if (students.Contains(student))
                 {
-                    int block = SelectBlock();
+                    byte block = SelectBlock();
 
                     if (block == 0)
                     {
@@ -96,10 +96,10 @@ namespace Lab
             return Console.ReadLine();
         }
 
-        static int SelectBlock()
+        static byte SelectBlock()
         {
             Console.WriteLine("Choose block:\n1 - First Block\n2 - Third Block\n0 - return back");
-            int block;
+            byte block;
             while (!int.TryParse(Console.ReadLine(), out block) && block < 0 && block > 2)
             {
                 Console.WriteLine("Error, invalid input. Please try again.");
