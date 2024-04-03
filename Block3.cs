@@ -13,7 +13,7 @@ namespace Block3
             int[][] resultArray = null;
             int choice;
 
-            Console.Write("Choose the way to execute:\n1 - Using Arrays\n2 - Using Lists\n0 - return back\n");
+            Console.WriteLine("Choose the way to execute:\n1 - Using Arrays\n2 - Using Lists\n0 - return back");
             while (!(int.TryParse(Console.ReadLine(), out choice)) || (choice < 0 || choice > 2))
             {
                 Console.WriteLine("Error. Try again");
@@ -41,11 +41,11 @@ namespace Block3
         {
             JaggedOutPut.OutPutArray(inputArray);
             int k = GetKNumber();
-            int[][] resultArray = AddKRowsArray(k, inputArray);
+            AddKRowsArray(k, ref inputArray);
             Console.WriteLine();
-            JaggedOutPut.OutPutArray(resultArray);
+            JaggedOutPut.OutPutArray(inputArray);
 
-            return resultArray;
+            return inputArray;
         }
 
         public static int[][] DoWithListsApproach(int[][] input)
@@ -76,7 +76,7 @@ namespace Block3
             return k;
         }
 
-        public static int[][] AddKRowsArray(int k, int[][] array)
+        public static void AddKRowsArray(int k, ref int[][] array)
         {
             Array.Resize(ref array, array.Length + k);
 
@@ -85,8 +85,6 @@ namespace Block3
                 int[] arr = SimpleInput.ManualArrayLine();
                 array[i] = arr;
             }
-
-            return array;
         }
 
         public static List<List<int>> AddKRowsList(int k, List<List<int>> list)
