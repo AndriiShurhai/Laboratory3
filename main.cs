@@ -100,7 +100,7 @@ namespace Lab
         {
             Console.WriteLine("Choose block:\n1 - First Block\n2 - Third Block\n0 - return back");
             byte block;
-            while (!int.TryParse(Console.ReadLine(), out block) && block < 0 && block > 2)
+            while (!byte.TryParse(Console.ReadLine(), out block) && block < 0 && block > 2)
             {
                 Console.WriteLine("Error, invalid input. Please try again.");
             }
@@ -112,11 +112,11 @@ namespace Lab
             switch (student)
             {
                 case "Nazar":
-                    return Block1N.Run(InputArrays.SimpleInput.ExecuteInput(prevResArray));
+                    return Block1N.Run(SimpleInput.ExecuteInput(prevResArray));
                 case "Karina":
-                    return Block1Karina.Start(InputArrays.SimpleInput.ExecuteInput(prevResArray));
+                    return Block1Karina.Start(SimpleInput.ExecuteInput(prevResArray));
                 case "Andrii":
-                    return Execute_Block1.Do(InputArrays.SimpleInput.ExecuteInput(prevResArray));
+                    return Execute_Block1.Do(SimpleInput.ExecuteInput(prevResArray));
                 default:
                     return prevResArray;
             }
